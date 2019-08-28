@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bio'
 require 'stringio'
 require 'fileutils'
-require 'Tempfile'
+require 'tempfile'
 require 'optparse'
 require 'date'
 
@@ -30,8 +30,8 @@ threshold = options[:threshold]
 if threshold < 0
 	threshold = nil
 end
-$log = IO.new(3, "w")
-$details = IO.new(4, "w")
+$log = IO.new(7, "w")
+$details = IO.new(8, "w")
 
 # Validate arguments.
 if ! ['A', 'B', 'C'].include? letter
@@ -99,7 +99,7 @@ def check_length(letter, seq, name)
 	end
 
 	if err
-		err = "Sequence %s is the wrong length (%d bp). Check the locus." % [name, seq.length]
+		err = "Sequence %s is the wrong length (%d bp). Check the locus %s." % [name, seq.length, letter]
 		$log.puts err
 		return false
 	end
@@ -298,6 +298,7 @@ $details.puts "ALLELE,MISMATCHES,EXON2,INTRON,EXON3"
 unmatched = [[], []]
 nseqs = 0
 npats = 0
+
 fasta = Bio::FlatFile.auto($stdin)
 fasta.each do |entry|
 	samp = entry.definition

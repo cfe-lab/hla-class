@@ -6,11 +6,12 @@
 	?>
 
 	<head>
-		<title>HLA Classification</title>
+		<title>HLA Classification - New</title>
 		<link
-		href='http://fonts.googleapis.com/css?family=Numans|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+		href='https://fonts.googleapis.com/css?family=Numans|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" 
 			href="style.css?id=<?php echo rand(1,1000); ?>" />
+		<meta name="robots" content="noindex" />  <!-- No thanks search engines! -->
 		<script src="scripts.js" type="text/javascript"></script>
 	</head>
 

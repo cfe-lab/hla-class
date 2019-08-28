@@ -286,7 +286,7 @@ function sendForm() {
 			}, 1000);
 		}
 	}
-	request.open("POST", "hla.php", true);
+	request.open("POST", "hla.php", false);
 	request.send(formData);
 }
 
